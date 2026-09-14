@@ -690,7 +690,7 @@
       background-color: rgba(0, 0, 0, 0.02);
     }
   </style>
-  <!-- Umami с явной передачей имени поддомена -->
+<!-- Umami Analytics: трекинг поддомена и автоматический перехват кликов -->
 <script defer 
   src="https://analytics.getnextfind.com/script.js" 
   data-website-id="76cb2154-2143-4330-8daa-dd1b5050745e" 
@@ -704,6 +704,15 @@
           url: window.location.hostname + window.location.pathname
         });
       });
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    var target = e.target.closest('[data-umami-event]');
+    if (target && window.umami) {
+      var eventName = target.getAttribute('data-umami-event');
+      var eventType = target.getAttribute('data-umami-event-type');
+      window.umami.track(eventName, eventType ? { type: eventType } : undefined);
     }
   });
 </script>
@@ -728,7 +737,7 @@
   </header>
 <!-- Top Red Category Button -->
 <div class="custom-top-cta-wrapper">
-    <a href="https://www.creativefabrica.com/search/ref/6895537/?query=amigurumi%20crochet%20pattern&amp;campaign=amigurumicrochetpattern" class="btn-top-red" rel="sponsored nofollow">
+    <a target="_blank" data-umami-event="Click Creative Fabrica" data-umami-event-type="Top Category Button" href="https://www.creativefabrica.com/search/ref/6895537/?query=amigurumi%20crochet%20pattern&amp;campaign=amigurumicrochetpattern" class="btn-top-red" rel="sponsored nofollow">
         Click 10000 + free crochet pattern
     </a>
 </div>
@@ -754,7 +763,7 @@
               <li>Clear assembly and finishing guide suitable for all skill levels</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/crochet-pattern-bundle/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/crochet-pattern-bundle/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -773,7 +782,7 @@
               <li>Includes tips for embroidering safe facial details for nursery gifts</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/crochet-cats-toy-pattern-pdf-amigurumi/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/crochet-cats-toy-pattern-pdf-amigurumi/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -792,7 +801,7 @@
               <li>Perfectly adapted for soft cotton or velvet yarns for extra snuggliness</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/crochet-stuffed-animal-bundle/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/crochet-stuffed-animal-bundle/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -811,7 +820,7 @@
               <li>Perfect holiday keepsake or handmade gift for little ones</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/christmas-reindeer-36/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/christmas-reindeer-36/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -830,7 +839,7 @@
               <li>High-quality layout with step-by-step photos for easy tracking</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/dachshund-21/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/dachshund-21/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -849,7 +858,7 @@
               <li>Creates a soft, huggable mythical creature for imaginative play</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/crochet-dragon-toy-pattern-pdf-amigurumi-11/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/crochet-dragon-toy-pattern-pdf-amigurumi-11/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -868,7 +877,7 @@
               <li>Printable PDF guide with detailed finishing and assembly instructions</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/small-bunny-rabbit/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/small-bunny-rabbit/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -887,7 +896,7 @@
               <li>Clear row counts to ensure symmetrical features and easy assembly</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/crochet-pattern-of-baby-elephant/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/crochet-pattern-of-baby-elephant/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -906,7 +915,7 @@
               <li>Clear stitch walkthroughs perfect for intermediate crocheters</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/koala-lovey-crochet-pattern/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/koala-lovey-crochet-pattern/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -925,7 +934,7 @@
               <li>Instant digital download with clear printer-friendly formatting</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/amigurumi-crochet-patterns-5/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/amigurumi-crochet-patterns-5/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -944,7 +953,7 @@
               <li>Ideal project for baby shower gifts and fairy-tale nursery decor</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/unicorn-466/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/unicorn-466/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -963,7 +972,7 @@
               <li>Perfect for building a comprehensive library of handmade plushies</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/crochet-pattern-byundle/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/crochet-pattern-byundle/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -982,7 +991,7 @@
               <li>Includes full sizing details and yarn yardage requirements</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/bessie-cow-blanket/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/bessie-cow-blanket/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -1001,7 +1010,7 @@
               <li>Clear photo tutorials to guide stitching from start to finish</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/crochet-5-bears-amigurumi-pdf-pattern/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/crochet-5-bears-amigurumi-pdf-pattern/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -1020,7 +1029,7 @@
               <li>Easy step-by-step PDF suitable for beginner-friendly stitching</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/bunny-34/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/bunny-34/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -1039,7 +1048,7 @@
               <li>Quick-to-make project using soft worsted weight yarn</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/turtle-crochet-pattern-amigurumi-pdf-4/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/turtle-crochet-pattern-amigurumi-pdf-4/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -1058,7 +1067,7 @@
               <li>Formatted for clean printing and digital tablet viewing</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/amigurumi-pattern-bundle-5/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/amigurumi-pattern-bundle-5/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -1077,7 +1086,7 @@
               <li>Convenient single download containing multiple standalone patterns</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/amigurumi-pattern-bundle-2/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/amigurumi-pattern-bundle-2/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
@@ -1096,7 +1105,7 @@
               <li>Complete step-by-step walkthrough for making safe baby toys</li>
             </ul>
             <div class="card-footer">
-              <a href="https://www.creativefabrica.com/product/crochet-pattern-amigurumi-hedgehog-toys/ref/6895537/" class="btn-cta" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
+              <a href="https://www.creativefabrica.com/product/crochet-pattern-amigurumi-hedgehog-toys/ref/6895537/" target="_blank" class="btn-card-cta" data-umami-event="Click Creative Fabrica" data-umami-event-type="Product Button" rel="sponsored nofollow" target="_blank">View on Creative Fabrica</a>
               <div class="card-microtext">Commercial license included • Instant PDF download</div>
             </div>
           </div>
